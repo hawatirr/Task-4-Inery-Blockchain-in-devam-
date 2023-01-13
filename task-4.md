@@ -1,89 +1,85 @@
-# Inery Json RPC 4.Görev
-Inery Blockchain'de Inery Task 4 : JSON RPC
+# Inery Task 4 : `Json RPC`
+Inery Blockchain in Task 4 `Json RPC`
 
-## 🟢Bilgiler
+## :heavy_exclamation_mark: For your information
 
-JSON RPC Örnek kodu örnek dizinde mevcuttur, değiştirmeyi deneyebilir ve nasıl çalıştığını anlayabilirsiniz, ayrıca kodunuzu çalıştırabilmek ve değerli sözleşme işlevini çağırabilmek için Hesabınızda Değerli Akıllı Sözleşmeye (Görev 3) sahip olmanız gerekir.
+ JSON RPC Sample code is available in the sample directory, you can try to modify it and understand how it works, you also need to have Value Smart Contract (Task 3) in your Account to be able to run your code and call the valuable contract function.
 
-
-## 🟢 Başlayın
-Eski Nodejs kaldırın
+## :beginner: Let's get started
+Remove old Nodejs
 <br>
 
 ```shell
 sudo apt-get remove nodejs
 ```
 
-Curl'ü yükleyin
+Install Curl
 
 ```shell
 sudo apt-get install curl
 ```
 
-Curl'ü yükleyin
-
 ```shell
-    curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-    sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
      
-## 🟢 NPM kurulumu
-
+## :beginner: Install NPM
 ```shell
 sudo apt install npm
 ```
 
 
 
-## 🟢 Kurulum
+## :beginner: Kurulum
 
-* Repoyu klonlayın
+* Cloning Repo
 
    ```
-   git clone https://github.com/hesapname/ineryjs.git
+   git clone https://github.com/inery-blockchain/ineryjs.git
    ```
 
-* Dizine Girin
+* Change Directory
 
    ```
    cd ineryjs
    ```
 
-* NPM Paket kurun
+* Install NPM Package
 
    ```
    npm install
    ```
 
-* Aşağıdaki Kod ile env-sample dosyasının ismini .env yapın 
+* Rename  env-sample file to .env 
 
    ```
    cp .env-sample .env
    ```
 
-*  ```.env``` bilgileriniz düzenleyin
+*  ```.env``` edit with your information
 
   ```
    nano .env
    ```
 
-Burada açılan pencerede <br><br>
 
-Aşağıdaki Bilgileri inery testnet Dashboard kısmında bulabilirsiniz.<br><br>
+You can check your account information from Dashboard inery.<br><br>
 
-INERY_ACCOUNT="HESAP ADINIZ" <br>
-PRIVATE_KEY="KEYİNİZ"<br>
-NODE_URL="http://NODEİPADRESİ:8888" 
+INERY_ACCOUNT="YOUR_INERY-ACCOUNT" <br>
+PRIVATE_KEY="PRIVATE_KEY"<br>
+NODE_URL="http://YOUR_IP_VPS:8888" 
 <br><br>
 
-ctrl +X  Yes diyip çıkıyoruz.
+and then
+ctrl +X  Yes
 
 
 
-## 🟢 8888 port açma 
+## :beginner: Open Port 8888 
 
-RPC Örneği Çalıştır
+RUN RPC EXAMPLE
 
 ```
 sudo ufw allow 8888
@@ -91,7 +87,7 @@ sudo ufw allow 8888
 
 <br>
 
-## 🟢 Çalıştırma
+## :beginner: Run this comand
 
 ```
 npm run rpc-example
@@ -101,12 +97,12 @@ npm run rpc-example
 
 
 <br><br>
-## 🟢 Hata Çözümleri
+## :beginner: FIX error solution
 
 Serialization time limit 15000us exceeded<br>
 
 
-* config.ini dosyanda max-transaction-time değerini 15000 olarak değiştir<br>
+* Change max-transaction-time to 15000 in your config.ini file<br>
 
 ```
 nano ./inery-node/inery.setup/master.node/blockchain/config/config.ini
@@ -129,15 +125,15 @@ sudo ufw allow 8888
 <br><br>
 
 * missing create.issuer ( type=name )<br>
-* Bu, hesabınızda Görev 3'te oluşturduğunuz Değerli Akıllı Sözleşme olmadığı anlamına gelir.
-* Hesabınızda CRUD Akıllı Sözleşmenizin olup olmadığını kontrol etmek için
+* This means that your account does not have the Value Smart Contract you created in Task 3.
+* check if you have CRUD Smart Contract in your account
 
 ```
-cline get abi ineryi-hesap-isminiz
+cline get abi your_inery_account
 ```
 
 <img src="https://camo.githubusercontent.com/35161f3c497c316d89925c7d1300ddaa78354daed4b783f615bd1561fd2bdba7/68747470733a2f2f736e6970626f6172642e696f2f615442484c332e6a7067" width="550">
 
-* bu çıktıya sahip olduğunuzdan emin olun<br><br>
+* Make sure output like this<br><br>
 
 <img src="https://camo.githubusercontent.com/107661c26d281a09dcc3495a03f04ab90e90148f506479ad54f2d5df26e82150/68747470733a2f2f736e6970626f6172642e696f2f3076736e4f712e6a7067" width="550">
