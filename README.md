@@ -33,7 +33,7 @@ git clone kopyaladığınız bağlantı linki
 #### 4. Proje dizinleri oluşturun
 ```
 cd ~/inery-testnet-faucet-tasks
-mkdir IneryAccname
+mkdir $IneryAccname
 ```
 
 ### 5. Çalıştır Komutu ile build-web çalıştırın
